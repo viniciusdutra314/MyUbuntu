@@ -1,9 +1,10 @@
 autoinstall:
     version: 1
     storage:
-      layout:
-        name: direct
-        reset-partition: true
+        layout:
+          name: lvm
+          password: mudar_depois
+          reset-partition: true
     identity:
         realname: 'Vinicius Dutra'
         hostname: nitro5-ubuntu
@@ -16,8 +17,5 @@ autoinstall:
         install: true
     drivers:
         install: true
-    layout:
-      name: lvm
-      password: Teste1234!
     updates: all
     shutdown: reboot
