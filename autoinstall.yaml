@@ -1,82 +1,82 @@
 autoinstall:
-    version: 1
-    identity:
-        realname: 'Vinicius Dutra'
-        hostname: nitro5-ubuntu
-        username: vinicius
-        password: '$y$j9T$dTJDsbtvnh8dJa6yUodB5.$HCPwWJNsBbg.wBpfRxK/QC0b.s7byFFkYEbc3u4RdzD'
-    keyboard:
-        layout: br
-    timezone: "America/Sao_Paulo"   
-    codecs:
-        install: true
-    drivers:
-        install: true
-    updates: all
-    shutdown: reboot
-    storage:
-        config:
-          - id: disk-system
-            type: disk
-            #match:
-              #path: /dev/nvme0n1
-            ptable: gpt
-            wipe: superblock
-            name: system
-          - id: part-efi
-            type: partition
-            device: disk-system
-            number: 1
-            size: 1G
-            wipe: superblock
-            flag: boot
-            grub_device: true
-          - id: part-boot
-            type: partition
-            device: disk-system
-            number: 2
-            size: 1G
-            wipe: superblock
-          - id: part-root
-            type: partition
-            device: disk-system
-            number: 3
-            size: 32G
-            wipe: superblock
-          - id: crypt-root
-            type: dm_crypt
-            volume: part-root
-            dm_name: crypt-root
-            key: setup
-          - id: format-efi
-            type: format
-            volume: part-efi
-            fstype: fat32
-            label: efi
-          - id: format-boot
-            type: format
-            volume: part-boot
-            fstype: btrfs
-            label: boot
-          - id: format-root
-            type: format
-            volume: crypt-root
-            fstype: btrfs
-            label: root
-          - id: mount-root
-            type: mount
-            device: format-root
-            path: /
-            options: 'defaults,relatime,compress=lzo,ssd,discard,autodefrag'        
-          - id: mount-boot
-            type: mount
-            device: format-boot
-            path: /boot
-            options: 'defaults,relatime,compress=lzo,ssd,discard,autodefrag'
-          - id: mount-efi
-            type: mount
-            device: format-efi
-            path: /boot/efi
+  version: 1
+  identity:
+      realname: 'Vinicius Dutra'
+      hostname: nitro5-ubuntu
+      username: vinicius
+      password: '$y$j9T$dTJDsbtvnh8dJa6yUodB5.$HCPwWJNsBbg.wBpfRxK/QC0b.s7byFFkYEbc3u4RdzD'
+  keyboard:
+      layout: br
+  timezone: "America/Sao_Paulo"   
+  codecs:
+      install: true
+  drivers:
+      install: true
+  updates: all
+  shutdown: reboot
+  storage:
+      config:
+        - id: disk-system
+          type: disk
+          #match:
+            #path: /dev/nvme0n1
+          ptable: gpt
+          wipe: superblock
+          name: system
+        - id: part-efi
+          type: partition
+          device: disk-system
+          number: 1
+          size: 1G
+          wipe: superblock
+          flag: boot
+          grub_device: true
+        - id: part-boot
+          type: partition
+          device: disk-system
+          number: 2
+          size: 1G
+          wipe: superblock
+        - id: part-root
+          type: partition
+          device: disk-system
+          number: 3
+          size: 32G
+          wipe: superblock
+        - id: crypt-root
+          type: dm_crypt
+          volume: part-root
+          dm_name: crypt-root
+          key: setup
+        - id: format-efi
+          type: format
+          volume: part-efi
+          fstype: fat32
+          label: efi
+        - id: format-boot
+          type: format
+          volume: part-boot
+          fstype: btrfs
+          label: boot
+        - id: format-root
+          type: format
+          volume: crypt-root
+          fstype: btrfs
+          label: root
+        - id: mount-root
+          type: mount
+          device: format-root
+          path: /
+          options: 'defaults,relatime,compress=lzo,ssd,discard,autodefrag'        
+        - id: mount-boot
+          type: mount
+          device: format-boot
+          path: /boot
+          options: 'defaults,relatime,compress=lzo,ssd,discard,autodefrag'
+        - id: mount-efi
+          type: mount
+          device: format-efi
+          path: /boot/efi
   late-commands:
     - curtin in-target -- apt-get update
     - curtin in-target -- apt-get install -y curl git 
