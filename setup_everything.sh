@@ -11,15 +11,15 @@ fi
 
 ## desbostificar o ubuntu
 
-if [ ! -f ./ubuntu-debullshit.sh]
-  wget https://raw.githubusercontent.com/polkaulfield/ubuntu-debullshit/refs/heads/main/ubuntu-debullshit.sh
-  chmod +x ubuntu-debullshit.sh
-  echo -e "1 \n n" |  sudo ./ubuntu-debullshit.sh #apply everthing
+if [ ! -f ./already_runned_debullshit]
+  touch already_runned_debullshit
+  chmod +x ubuntu-debullshit_modified.sh
+  sudo ./ubuntu-debullshit_modified.sh 
 fi
 
 #programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip
+sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree
 
 ##install flatpak remotes
 
