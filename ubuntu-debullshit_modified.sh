@@ -103,3 +103,4 @@ main() {
     install_icons
 }
 
+main
