@@ -41,7 +41,7 @@ autoinstall:
             type: partition
             device: disk-system
             number: 3
-            size: 32G
+            size: -1
             wipe: superblock
           - id: crypt-root
             type: dm_crypt
@@ -78,9 +78,11 @@ autoinstall:
             device: format-efi
             path: /boot/efi
     late-commands:
-      - curtin in-target -- apt-get update
-      - curtin in-target -- apt-get install -y curl git 
-      - curtin in-target -- git clone https://github.com/viniciusdutra314/MyUbuntu
-      - curtin in-target -- cd MyUbuntu
-      - curtin in-target -- chmod 777 install_apps.sh
-      - curtin in-target -- sudo ./install_apps.sh
+      - curtin in-target -- bash -c "
+          apt-get update && 
+          apt-get install -y curl git && 
+          git clone https://github.com/viniciusdutra314/MyUbuntu && 
+          cd MyUbuntu && 
+          chmod 777 install_apps.sh && 
+          sudo ./install_apps.sh
+        "
