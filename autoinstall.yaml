@@ -83,6 +83,6 @@ autoinstall:
           apt-get install -y curl git && 
           git clone https://github.com/viniciusdutra314/MyUbuntu && 
           cd MyUbuntu && 
-          chmod 777 install_apps.sh && 
-          sudo ./install_apps.sh
+          chmod 777 setup_everything.sh && 
+          sudo ./setup_everything.sh
         "
