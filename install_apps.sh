@@ -1,6 +1,6 @@
 #!/bin/bash
-## Criar swapfile
 
+## Criar swapfile
 if [ ! -f /swapfile ]; then
   sudo fallocate -l 8G /swapfile  # Allocate size
   sudo chmod 600 /swapfile                # Set proper permission
@@ -19,16 +19,17 @@ fi
 
 #programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim  valgrind neofetch gparted btop
+sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip
 
 ##install flatpak remotes
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
 
-awk '{print "flatpak install -y "$1" "$2}' ./flatpak.txt > flatpak_install.sh
-sudo chmod +x flatpak_install.sh
-./flatpak_install.sh
+awk '{print "flatpak install -y "$1" "$2}' ./flatpak.txt > /tmp/flatpak_install.sh
+sudo chmod +x /tmp/flatpak_install.sh
+/tmp/flatpak_install.sh
+
 ## Programas que rodam nativos
 
 ## instalar gh
@@ -74,10 +75,6 @@ sudo usermod -aG docker $USER
 newgrp docker
 docker run hello-world
 
-#Joplin
-sudo apt install -y libfuse2
-wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-
 
 ## Remove unused packages
-sudo apt autoremove
+sudo apt autoremove -y 

@@ -8,7 +8,7 @@ flathub	com.obsproject.Studio
 flathub	com.rafaelmardojai.Blanket
 flathub	com.spotify.Client
 flathub	com.valvesoftware.Steam
-flathub	com.visualstudio.code
+net.cozic.joplin_desktop
 flathub	dev.geopjr.Collision
 flathub	fr.handbrake.ghb
 flathub	io.github.finefindus.Hieroglyphic
