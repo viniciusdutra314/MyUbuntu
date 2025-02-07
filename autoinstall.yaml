@@ -47,7 +47,7 @@ autoinstall:
             type: dm_crypt
             volume: part-root
             dm_name: crypt-root
-            key: $y$j9T$bRnwtJyoYg4HHz9ZazSF3/$YJc1tBznhBiY9BUGQIJyZoTAEPcQkEeNgQEG3/V4HN4
+            key: change_password
           - id: format-efi
             type: format
             volume: part-efi
