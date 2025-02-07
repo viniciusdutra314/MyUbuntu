@@ -5,7 +5,7 @@ if [ ! -f /swapfile ]; then
   sudo fallocate -l 8G /swapfile  # Allocate size
   sudo chmod 600 /swapfile                # Set proper permission
   sudo mkswap /swapfile                   # Setup swap         
-  sudo swapon $                   # Enable swap
+  sudo swapon /swapfile                   # Enable swap
   echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a # Add to fstab
 fi
 
