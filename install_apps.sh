@@ -12,7 +12,7 @@ echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a
 
 wget https://raw.githubusercontent.com/polkaulfield/ubuntu-debullshit/refs/heads/main/ubuntu-debullshit.sh
 chmod +x ubuntu-debullshit.sh
-echo -e "1 \n y" |  sudo ./ubuntu-debullshit.sh #apply everthing
+echo -e "1 \n n" |  sudo ./ubuntu-debullshit.sh #apply everthing
 
 #programas aleatórios
 sudo apt update
