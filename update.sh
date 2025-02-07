@@ -1,1 +1,1 @@
-flatpak list --columns origin,app > flatpak.txt
+flatpak list --app --columns origin,app > flatpak.txt
