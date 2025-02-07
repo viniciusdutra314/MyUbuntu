@@ -35,7 +35,7 @@ autoinstall:
             type: partition
             device: disk-system
             number: 2
-            size: 9G
+            size: 1G
             wipe: superblock
           - id: part-root
             type: partition
@@ -47,7 +47,7 @@ autoinstall:
             type: dm_crypt
             volume: part-root
             dm_name: crypt-root
-            key: setup
+            key: $y$j9T$bRnwtJyoYg4HHz9ZazSF3/$YJc1tBznhBiY9BUGQIJyZoTAEPcQkEeNgQEG3/V4HN4
           - id: format-efi
             type: format
             volume: part-efi
