@@ -6,12 +6,12 @@ if [ ! -f /swapfile ]; then
   sudo chmod 600 /swapfile                # Set proper permission
   sudo mkswap /swapfile                   # Setup swap         
   sudo swapon $                   # Enable swap
-  echo "$SWAP_PATH   none    swap    sw    0   0" | sudo tee /etc/fstab -a # Add to fstab
+  echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a # Add to fstab
 fi
 
 ## desbostificar o ubuntu
 
-if [ ! -f ./already_runned_debullshit]; then
+if [ ! -f ./already_runned_debullshit ]; then
   touch already_runned_debullshit
   chmod +x ubuntu-debullshit_modified.sh
   sudo ./ubuntu-debullshit_modified.sh 
@@ -19,7 +19,7 @@ fi
 
 #programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree
+sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc
 
 ##install flatpak remotes
 
@@ -73,8 +73,7 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
-docker run hello-world
 
-
-## Remove unused packages
+## Remove some packages
 sudo apt autoremove -y 
+sudo snap remove firefox
