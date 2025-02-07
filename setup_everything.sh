@@ -11,7 +11,7 @@ fi
 
 ## desbostificar o ubuntu
 
-if [ ! -f ./already_runned_debullshit]
+if [ ! -f ./already_runned_debullshit]; then
   touch already_runned_debullshit
   chmod +x ubuntu-debullshit_modified.sh
   sudo ./ubuntu-debullshit_modified.sh 
