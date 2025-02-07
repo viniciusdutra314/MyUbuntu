@@ -1,12 +1,22 @@
 #!/bin/bash
+## Criar swapfile
+
+sudo fallocate -l 8G /swapfile  
+sudo chmod 600 /swapfile                
+sudo mkswap /swapfile                            
+sudo swapon /swapfile                   
+echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a 
+
+
 ## desbostificar o ubuntu
 
 wget https://raw.githubusercontent.com/polkaulfield/ubuntu-debullshit/refs/heads/main/ubuntu-debullshit.sh
 chmod +x ubuntu-debullshit.sh
 echo -e "1 \n y" |  sudo ./ubuntu-debullshit.sh #apply everthing
 
+#programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim flatpak valgrind neofetch
+sudo apt install -y wget git vim  valgrind neofetch gparted btop
 
 ##install flatpak remotes
 
