@@ -77,3 +77,8 @@ newgrp docker
 ## Remove some packages
 sudo apt autoremove -y 
 sudo snap remove firefox
+
+
+## Aesthetics
+gsettings set org.gnome.desktop.background picture-uri-dark https://raw.githubusercontent.com/viniciusdutra314/MyUbuntu/refs/heads/main/images/wallpaper.jpeg
+gsettings set org.gnome.desktop.background picture-uri https://raw.githubusercontent.com/viniciusdutra314/MyUbuntu/refs/heads/main/images/wallpaper.jpeg
