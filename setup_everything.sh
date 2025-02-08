@@ -19,7 +19,7 @@ fi
 
 #programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc
+sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc timeshift
 
 ##install flatpak remotes
 
@@ -73,10 +73,19 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
+sudo apt install distrobox
+
+### Nvidia
+
+wget https://github.com/bayasdev/envycontrol/releases/download/v3.5.1/python3-envycontrol_3.5.1-1_all.deb
+sudo apt install -y ./python3-envycontrol_3.5.1-1_all.deb
+
+
 
 ## Remove some packages
 sudo apt autoremove -y 
 sudo snap remove firefox
+
 
 
 ## Aesthetics
