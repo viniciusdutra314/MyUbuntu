@@ -16,11 +16,10 @@ autoinstall:
     shutdown: reboot
     storage:
         config:
-          - reset-partition: 10G
           - id: disk-system
             type: disk
-            #match:
-              #path: /dev/nvme0n1
+            match:
+              path: /dev/nvme0n1
             ptable: gpt
             wipe: superblock
             name: system
