@@ -24,3 +24,5 @@ flathub	org.libreoffice.LibreOffice
 flathub	org.qbittorrent.qBittorrent
 flathub	org.stellarium.Stellarium
 flathub	org.videolan.VLC
+flathub org.zotero.Zotero
+
