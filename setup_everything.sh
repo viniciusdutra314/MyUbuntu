@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ## Criar swapfile
-btrfs filesystem mkswapfile --size 8G swapfile
-swapon /swapfile
+sudo btrfs filesystem mkswapfile --size 8G /swapfile
+sudo swapon /swapfile
 echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a # Add to fstab
 
 ## desbostificar o ubuntu
@@ -79,4 +79,3 @@ sudo apt install -y ./python3-envycontrol_3.5.1-1_all.deb
 
 ## Remove some packages
 sudo apt autoremove -y 
-sudo snap remove firefox -y 
