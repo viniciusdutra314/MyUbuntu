@@ -75,6 +75,7 @@ sudo apt install -y distrobox
 wget https://github.com/bayasdev/envycontrol/releases/download/v3.5.1/python3-envycontrol_3.5.1-1_all.deb
 sudo apt install -y ./python3-envycontrol_3.5.1-1_all.deb
 
+sudo apt install nvidia-cuda-toolkit
 
 
 ## Remove some packages
