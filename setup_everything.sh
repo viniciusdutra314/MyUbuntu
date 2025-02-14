@@ -14,7 +14,7 @@ fi
 
 #programas aleatórios
 sudo apt update
-sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc timeshift speedtest-cli ffmpeg
+sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc speedtest-cli ffmpeg
 
 ##install flatpak remotes
 
@@ -80,3 +80,6 @@ sudo apt install nvidia-cuda-toolkit
 
 ## Remove some packages
 sudo apt autoremove -y 
+
+## Gnome
+sudo apt-get install -y gnome-shell-pomodoro

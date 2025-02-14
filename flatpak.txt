@@ -5,17 +5,20 @@ flathub	com.github.tchx84.Flatseal
 flathub	com.google.Chrome
 flathub	com.mattjakeman.ExtensionManager
 flathub	com.obsproject.Studio
+flathub	com.protonvpn.www
 flathub	com.rafaelmardojai.Blanket
 flathub	com.spotify.Client
 flathub	com.valvesoftware.Steam
-net.cozic.joplin_desktop
+flathub	dev.bragefuglseth.Fretboard
 flathub	dev.geopjr.Collision
 flathub	fr.handbrake.ghb
 flathub	io.github.finefindus.Hieroglyphic
 flathub	io.github.flattool.Warehouse
+flathub	io.github.jonmagon.kdiskmark
+flathub	io.github.thetumultuousunicornofdarkness.cpu-x
 flathub	net.ankiweb.Anki
+flathub	net.cozic.joplin_desktop
 flathub	org.audacityteam.Audacity
-flathub	org.flameshot.Flameshot
 gnome-nightly	org.gimp.GIMP.Nightly
 flathub	org.gnome.Boxes
 flathub	org.gnome.gitlab.YaLTeR.VideoTrimmer
@@ -23,6 +26,6 @@ flathub	org.kde.isoimagewriter
 flathub	org.libreoffice.LibreOffice
 flathub	org.qbittorrent.qBittorrent
 flathub	org.stellarium.Stellarium
+flathub	org.telegram.desktop
 flathub	org.videolan.VLC
-flathub org.zotero.Zotero
-
+flathub	org.zotero.Zotero
