@@ -14,12 +14,12 @@ autoinstall:
         install: true
     updates: all
     shutdown: reboot
+    interactive-sections:
+        - storage
     storage:
         config:
           - id: disk-system
             type: disk
-            match:
-              path: /dev/nvme0n1
             ptable: gpt
             wipe: superblock
             name: system

@@ -8,6 +8,7 @@ flathub	com.obsproject.Studio
 flathub	com.protonvpn.www
 flathub	com.rafaelmardojai.Blanket
 flathub	com.spotify.Client
+flathub	com.usebottles.bottles
 flathub	com.valvesoftware.Steam
 flathub	dev.bragefuglseth.Fretboard
 flathub	dev.geopjr.Collision
