@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Criar swapfile
-sudo btrfs filesystem mkswapfile --size 8G /swapfile
+sudo btrfs filesystem mkswapfile --size 16G /swapfile
 sudo swapon /swapfile
 echo "/swapfile none swap defaults 0 0" | sudo tee /etc/fstab -a # Add to fstab
 
@@ -13,8 +13,10 @@ if [ ! -f ./already_runned_debullshit ]; then
 fi
 
 #programas aleatórios
+sudo add-apt-repository -y ppa:zhangsongcui3371/fastfetch
 sudo apt update
-sudo apt install -y wget git vim valgrind neofetch gparted btop texlive-full python3-pip tree cloc speedtest-cli ffmpeg
+sudo apt install fastfetch -y
+sudo apt install -y wget git cmake make vim valgrind  gparted htop btop texlive-full python3-pip tree cloc speedtest-cli ffmpeg
 
 ##install flatpak remotes
 
@@ -78,8 +80,20 @@ sudo apt install -y ./python3-envycontrol_3.5.1-1_all.deb
 sudo apt install nvidia-cuda-toolkit
 
 
-## Remove some packages
-sudo apt autoremove -y 
+## Terminal
 
+sudo apt-get install tilix tmux
+sudo apt remove --purge gnome-terminal
 ## Gnome
 sudo apt-get install -y gnome-shell-pomodoro
+
+
+##flameshot
+gsettings set org.gnome.shell.keybindings show-screenshot-ui '[]'
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'flameshot'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'flatpak run org.flameshot.Flameshot gui'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Print'
+
+## Remove unused
+sudo apt autoremove -y 

@@ -17,9 +17,11 @@ flathub	io.github.finefindus.Hieroglyphic
 flathub	io.github.flattool.Warehouse
 flathub	io.github.jonmagon.kdiskmark
 flathub	io.github.thetumultuousunicornofdarkness.cpu-x
+flathub	io.github.vikdevelop.SaveDesktop
 flathub	net.ankiweb.Anki
 flathub	net.cozic.joplin_desktop
 flathub	org.audacityteam.Audacity
+flathub	org.flameshot.Flameshot
 gnome-nightly	org.gimp.GIMP.Nightly
 flathub	org.gnome.Boxes
 flathub	org.gnome.gitlab.YaLTeR.VideoTrimmer
