@@ -77,13 +77,15 @@ sudo apt install -y distrobox
 wget https://github.com/bayasdev/envycontrol/releases/download/v3.5.1/python3-envycontrol_3.5.1-1_all.deb
 sudo apt install -y ./python3-envycontrol_3.5.1-1_all.deb
 
-sudo apt install nvidia-cuda-toolkit
-
+if command -v nvidia-smi &>/dev/null; then
+    echo "nvidia-smi exists"
+    sudo apt install -y nvidia-cuda-toolkit
+fi
 
 ## Terminal
 
-sudo apt-get install tilix tmux
-sudo apt remove --purge gnome-terminal
+sudo apt-get install -y tilix tmux
+sudo apt remove -y --purge gnome-terminal
 sudo apt install -y zsh 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
