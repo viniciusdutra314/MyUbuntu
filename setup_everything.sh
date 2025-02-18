@@ -84,6 +84,9 @@ sudo apt install nvidia-cuda-toolkit
 
 sudo apt-get install tilix tmux
 sudo apt remove --purge gnome-terminal
+sudo apt install -y zsh 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 ## Gnome
 sudo apt-get install -y gnome-shell-pomodoro
 
@@ -96,4 +99,5 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Print'
 
 ## Remove unused
+
 sudo apt autoremove -y 
