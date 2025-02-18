@@ -83,6 +83,7 @@ autoinstall:
       - curtin in-target -- bash -c "
           apt-get update && 
           apt-get install -y curl git && 
+          cd /tmp && 
           git clone https://github.com/viniciusdutra314/MyUbuntu && 
           cd MyUbuntu && 
           chmod 777 setup_everything.sh && 
