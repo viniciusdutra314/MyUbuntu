@@ -26,6 +26,7 @@ update_system() {
 setup_flathub() {
     apt install flatpak -y
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
     apt install --install-suggests gnome-software -y
 }
 
