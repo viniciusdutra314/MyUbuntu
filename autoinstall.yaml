@@ -1,3 +1,4 @@
+#cloud-config
 autoinstall:
     version: 1
     identity:
@@ -30,7 +31,7 @@ autoinstall:
             number: 1
             size: 1G
             wipe: superblock
-            flag: boot
+            flag: boot,esp
             grub_device: true
           - id: part-boot
             type: partition
